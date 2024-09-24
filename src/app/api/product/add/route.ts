@@ -82,8 +82,13 @@ async function getImageUrl(query: string): Promise<string> {
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`);
 		}
-		const data = await response.json();
-		return data.photos[0].src.medium;
+		const data = (await response.json()) as {
+			photos: { src: { medium: string } }[];
+		};
+		return (
+			data.photos?.[0]?.src?.medium ||
+			"https://via.placeholder.com/400x300.png?text=Image+Not+Found"
+		);
 	} catch (error) {
 		console.error(`Error fetching image for ${query}:`, error);
 		return "https://via.placeholder.com/400x300.png?text=Image+Not+Found";
