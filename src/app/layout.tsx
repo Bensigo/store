@@ -38,6 +38,12 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 						data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
 					/>
 				)}
+				<Script
+					src="https://translatestore.vercel.app/api/generate-script"
+					data-api-key="tk_d71d3e69c30ce01b4c2e5fb494ca0f4a245fd8f3ec97a310e1f1a5583c3d3889"
+					defer
+					async
+				/>
 				<SpeedInsights />
 				<Analytics />
 			</body>

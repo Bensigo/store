@@ -6,7 +6,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev --port=8000",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
@@ -111,10 +111,7 @@
 				"react-dom": "19.0.0-rc-a99d8e8d-20240916",
 				"@stripe/stripe-js": "4.1.0"
 			},
-			"allowAny": [
-				"@types/react",
-				"@types/react-dom"
-			]
+			"allowAny": ["@types/react", "@types/react-dom"]
 		}
 	},
 	"engines": {
@@ -123,9 +120,7 @@
 	},
 	"packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
 	"release": {
-		"branches": [
-			"main"
-		],
+		"branches": ["main"],
 		"plugins": [
 			"@semantic-release/commit-analyzer",
 			"@semantic-release/release-notes-generator",

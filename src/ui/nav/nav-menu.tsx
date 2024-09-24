@@ -30,6 +30,7 @@ export function NavMenu({ links }: { links: NavLink[] }) {
 						</NavigationMenuLink>
 					</NavigationMenuItem>
 				))}
+				<div data-id="translateStore"></div>
 			</NavigationMenuList>
 		</NavigationMenu>
 	);

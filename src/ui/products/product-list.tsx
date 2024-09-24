@@ -5,8 +5,16 @@ import { JsonLd, mappedProductsToJsonLd } from "@/ui/json-ld";
 import { YnsLink } from "@/ui/yns-link";
 import { formatMoney } from "@/lib/utils";
 
-export const ProductList = async ({ products }: { products: Commerce.MappedProduct[] }) => {
+export const ProductList = async ({
+	products,
+}: {
+	products: Commerce.MappedProduct[];
+}) => {
 	const locale = await getLocale();
+
+	if (!products || products.length === 0) {
+		return <p>No products available.</p>;
+	}
 
 	return (
 		<>

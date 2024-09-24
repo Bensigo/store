@@ -48,7 +48,6 @@ export async function Footer() {
 						<Newsletter />
 					</div>
 				</div>
-
 				<nav className="grid grid-cols-2 gap-16">
 					{sections.map((section) => (
 						<section key={section.header}>

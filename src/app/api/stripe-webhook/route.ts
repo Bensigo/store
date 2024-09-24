@@ -6,7 +6,9 @@ import { unpackPromise } from "@/lib/utils";
 
 export async function POST(request: Request) {
 	if (!env.STRIPE_WEBHOOK_SECRET) {
-		return new Response("STRIPE_WEBHOOK_SECRET is not configured", { status: 500 });
+		return new Response("STRIPE_WEBHOOK_SECRET is not configured", {
+			status: 500,
+		});
 	}
 
 	const signature = request.headers.get("Stripe-Signature");
